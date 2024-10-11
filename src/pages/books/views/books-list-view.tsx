@@ -83,27 +83,6 @@ const BookListView = (props: Props) => {
                 </Typography>
             )}
             <Grid container spacing={3} p={3}>
-                <Grid size={{ xs: 12, md: 4 }}>
-                    <BookItem
-                        title={'Book 1'}
-                        status={0}
-                        onChangeStatus={(status) => changeBookStatus(1, status)}
-                        onDelete={() => deleteBook(1)}
-                        loadingChangeStatus={changeStatusLoading.includes(1)}
-                        loadingDelete={deleteLoading.includes(1)}
-                    />
-                </Grid>
-
-                <Grid size={{ xs: 12, md: 4 }}>
-                    <BookItem
-                        title={'Book 2'}
-                        status={0}
-                        onChangeStatus={(status) => changeBookStatus(2, status)}
-                        onDelete={() => deleteBook(2)}
-                        loadingChangeStatus={changeStatusLoading.includes(2)}
-                        loadingDelete={deleteLoading.includes(2)}
-                    />
-                </Grid>
                 {data.map((i) => {
                     return (
                         <Grid size={{ xs: 12, md: 4 }}>
