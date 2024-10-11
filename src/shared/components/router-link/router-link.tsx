@@ -1,10 +1,7 @@
 import { Link, LinkProps } from '@mui/material';
 import { Link as RRouterLink, LinkProps as RouterLinkProps } from 'react-router-dom';
 
-type Props = {
-    to: string;
-} & RouterLinkProps &
-    LinkProps;
+type Props = {} & RouterLinkProps & LinkProps;
 
 const RouterLink = ({ href, ...props }: Props) => {
     return (

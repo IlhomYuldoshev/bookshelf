@@ -26,7 +26,7 @@ type Props = {};
 const SignUpView = (props: Props) => {
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
-    const { userData } = useAuthStore();
+    const { userData, getUserData } = useAuthStore();
 
     const formik = useFormik({
         initialValues: {
@@ -45,6 +45,7 @@ const SignUpView = (props: Props) => {
                     secret: values.secret,
                 });
                 auth_service.setCredentials(response.data.data.key, response.data.data.secret);
+                await getUserData();
                 navigateAfterSuccess();
             } catch (e) {
                 console.log(e);

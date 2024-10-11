@@ -9,8 +9,8 @@ const endpoints = {
         getAll: '/books',
         search: (title: string) => `/books/${title}`,
         create: '/books',
-        edit: (id: string) => `/books/${id}`,
-        delete: (id: string) => `/books/${id}`,
+        edit: (id: string | number) => `/books/${id}`,
+        delete: (id: string | number) => `/books/${id}`,
     },
 };
 

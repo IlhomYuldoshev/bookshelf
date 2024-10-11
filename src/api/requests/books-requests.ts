@@ -22,15 +22,15 @@ class Books_requests {
         });
     }
 
-    public create(data: any) {
+    public create(data: { isbn: string }) {
         return this.client.post<BackendResponse<RawBook>>(endpoints.books.create, data);
     }
 
-    public edit(id: string, data: any) {
+    public edit(id: number, data: { status: number }) {
         return this.client.patch<BackendResponse<RawBook>>(endpoints.books.edit(id), data);
     }
 
-    public delete(id: string) {
+    public delete(id: number) {
         return this.client.delete<BackendResponse<RawBook[]>>(endpoints.books.delete(id));
     }
 }

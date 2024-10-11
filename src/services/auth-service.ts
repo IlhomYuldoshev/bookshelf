@@ -40,11 +40,14 @@ export const auth_service = {
         const key = this.getCredentials()?.key ?? '';
         const secret = this.getCredentials()?.secret ?? '';
 
-        console.log('params: ', { method, url, body, secret });
+        const signText = `${method}${url}${body ? JSON.stringify(body) : ''}${secret}`;
+
+        console.log('sign params: ', { method, url, body, secret });
+        console.log('sign text', signText);
 
         return {
             key,
-            sign: md5(`${method}${url}${body}${secret}`),
+            sign: md5(signText),
         };
     },
 };
